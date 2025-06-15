@@ -11,7 +11,7 @@ export default function Portfolio() {
       title: "Not Defteri App",
       description: "React Native ile geliştirilen, kategori ve renk destekli basit not alma uygulaması.",
       tech: ["React Native", "AsyncStorage", "React Navigation"],
-      github: "https://github.com/kullanici/not-defteri"
+      github: "https://github.com/simayedik/codeTalks"
     },
     {
       title: "Harcama Takip App",
