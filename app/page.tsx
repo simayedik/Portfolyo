@@ -8,23 +8,23 @@ import { Github, Linkedin, Mail } from "lucide-react";
 export default function Portfolio() {
   const projects = [
     {
-      title: "Not Defteri App",
-      description: "React Native ile geliştirilen, kategori ve renk destekli basit not alma uygulaması.",
-      tech: ["React Native", "AsyncStorage", "React Navigation"],
+      title: "Code Talks",
+      description: "React Native ile geliştirilen,odalar oluşturabildikleri var olan odalara girip sohbet edbilecekeleri bir uygulama",
+      tech: ["React Native", "Firebase"],
       github: "https://github.com/simayedik/codeTalks"
     },
-    {
-      title: "Harcama Takip App",
-      description: "Aylık gelir-gider takibi, Firebase Auth ve grafik destekli harcama yönetimi.",
-      tech: ["React Native", "Firebase", "Victory Native"],
-      github: "https://github.com/kullanici/harcama-takip"
-    },
-    {
-      title: "Konum Tabanlı Notlar",
-      description: "Google Maps API ile konum işaretleyip, o konuma özel notlar ekleyebilen uygulama.",
-      tech: ["React Native", "react-native-maps", "Firebase"],
-      github: "https://github.com/kullanici/konum-notlari"
-    }
+    // {
+    //   title: "Harcama Takip App",
+    //   description: "Aylık gelir-gider takibi, Firebase Auth ve grafik destekli harcama yönetimi.",
+    //   tech: ["React Native", "Firebase", "Victory Native"],
+    //   github: "https://github.com/kullanici/harcama-takip"
+    // },
+    // {
+    //   title: "Konum Tabanlı Notlar",
+    //   description: "Google Maps API ile konum işaretleyip, o konuma özel notlar ekleyebilen uygulama.",
+    //   tech: ["React Native", "react-native-maps", "Firebase"],
+    //   github: "https://github.com/kullanici/konum-notlari"
+    // }
   ];
 
   return (
