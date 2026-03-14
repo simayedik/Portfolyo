@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, X, CheckCircle } from "lucide-react";
-
+import { Github, Linkedin, Mail } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
-import Slideshow from "@/components/Slideshow";
-
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { useProjectModal } from "@/hooks/useProjectModal";
