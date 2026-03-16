@@ -15,7 +15,8 @@
       github: "https://github.com/simayedik/sub-tracker", // Kendi repo linkinle değiştir!
       images: [
         "/images/abonelikTakip.png",
-      ], // Açık/Koyu modun yan yana olduğu mockup
+          "/images/abonelikTakip1.png",
+      ], 
       category: "Mobil Uygulama",
     },
     {
@@ -32,7 +33,8 @@
       ],
       github: "https://github.com/simayedik/codeTalks",
       images: [
-        "/images/hisseTahmin.png",
+        "/images/codeTalks.png",
+        "/images/codeTalks1.png",
       ],
       demo: "https://code-talks-demo.vercel.app",
       category: "Mobil Uygulama",
