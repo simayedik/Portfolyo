@@ -30,7 +30,7 @@ export default function Slideshow({
         <motion.img
           drag="x" // Sadece yatayda sürüklemeye izin ver
           dragConstraints={{ left: 0, right: 0 }} // Sürüklendikten sonra yerine geri döner
-          onDragEnd={(e, { offset, velocity }) => {
+          onDragEnd={(e, { offset }) => {
             // Eğer kullanıcı resmi yeterince sağa veya sola sürüklediyse resim değişsin
             const swipe = offset.x;
             if (swipe < -50) {
@@ -83,3 +83,4 @@ export default function Slideshow({
     </div>
   );
 }
+
