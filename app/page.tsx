@@ -53,19 +53,23 @@ export default function Portfolio() {
         </div>
       </header>
 
+        
+
       <section className="space-y-6">
         <h2 className="text-3xl font-bold tracking-tight">Yetenekler</h2>
         <div className="flex flex-wrap gap-3">
           {skills.map((skill, i) => (
             <span
               key={i}
-              className="bg-blue-100/50 text-blue-800 px-4 py-1.5 rounded-full text-sm font-medium border border-blue-200"
+              className="bg-gray-500 text-blue-800 px-4 py-1.5 rounded-full text-sm font-medium border border-blue-200"
             >
               {skill}
             </span>
           ))}
         </div>
       </section>
+
+     
 
       <section className="space-y-8">
         <h2 className="text-3xl font-bold tracking-tight">Öne Çıkan Projeler</h2>
@@ -88,9 +92,12 @@ export default function Portfolio() {
         setCurrentIndex={setCurrentIndex}
       />
 
-      <footer className="pt-10 text-center text-slate-500 border-t border-slate-200">
-        &copy; {new Date().getFullYear()} Simay. Tüm hakları saklıdır.
-      </footer>
+   <footer className="pt-10 text-center text-slate-500 border-t border-slate-200 space-y-2">
+  <p>&copy; {new Date().getFullYear()} Simay. Tüm hakları saklıdır.</p>
+  <div className="text-xs space-x-4">
+    <a href="/delete-account" className="hover:text-slate-900 underline">MiVocabulario Hesap Silme</a>
+  </div>
+</footer>
     </div>
   );
 }

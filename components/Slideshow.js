@@ -1,7 +1,13 @@
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-export default function Slideshow ({ images, currentIndex, nextImage, prevImage }) {
+
+export default function Slideshow({
+  images,
+  currentIndex,
+  nextImage,
+  prevImage,
+}) {
   if (!images || images.length === 0) return null;
 
   // Tek resim varsa: Butonları kaldır ve animasyonu basitleştir
@@ -22,9 +28,20 @@ export default function Slideshow ({ images, currentIndex, nextImage, prevImage 
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden group">
       <AnimatePresence mode="wait">
         <motion.img
+          drag="x" // Sadece yatayda sürüklemeye izin ver
+          dragConstraints={{ left: 0, right: 0 }} // Sürüklendikten sonra yerine geri döner
+          onDragEnd={(e, { offset, velocity }) => {
+            // Eğer kullanıcı resmi yeterince sağa veya sola sürüklediyse resim değişsin
+            const swipe = offset.x;
+            if (swipe < -50) {
+              nextImage(); // Sola kaydırınca sonraki resim
+            } else if (swipe > 50) {
+              prevImage(); // Sağa kaydırınca önceki resim
+            }
+          }}
           key={currentIndex}
           src={images[currentIndex]}
-          // Buradaki x değerlerini currentIndex'e göre dinamik yapabilirsin 
+          // Buradaki x değerlerini currentIndex'e göre dinamik yapabilirsin
           // ama basit tutmak için opacity geçişi de çok şık durur
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -33,30 +50,36 @@ export default function Slideshow ({ images, currentIndex, nextImage, prevImage 
           className="max-h-[70vh] object-contain rounded-xl shadow-xl"
         />
       </AnimatePresence>
-      
+
       {/* Navigasyon Butonları */}
       <button
-        onClick={(e) => { e.stopPropagation(); prevImage(); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          prevImage();
+        }}
         className="absolute left-2 bg-white/90 hover:bg-white p-2 rounded-full shadow-md text-slate-800 transition-all opacity-0 group-hover:opacity-100"
       >
         <ChevronLeft size={20} />
       </button>
       <button
-        onClick={(e) => { e.stopPropagation(); nextImage(); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          nextImage();
+        }}
         className="absolute right-2 bg-white/90 hover:bg-white p-2 rounded-full shadow-md text-slate-800 transition-all opacity-0 group-hover:opacity-100"
-      >  
+      >
         <ChevronRight size={20} />
       </button>
 
       {/* Görsel İndikatörler (Dots) */}
       <div className="absolute bottom-4 flex gap-1.5">
         {images.map((_, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className={`h-1.5 rounded-full transition-all ${i === currentIndex ? "bg-blue-600 w-4" : "bg-slate-300 w-1.5"}`}
           />
         ))}
       </div>
     </div>
   );
-};
+}

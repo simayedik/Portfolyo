@@ -3,6 +3,7 @@ import Slideshow from "./Slideshow";
 import { X, CheckCircle, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
 interface Project {
     title: string;
     description: string;
@@ -49,11 +50,13 @@ export default function ProjectModal({ isOpen, onClose, project, currentIndex, s
                     <div className="bg-slate-100 flex items-center justify-center p-6">
                         <div className="bg-slate-100 flex items-center justify-center p-6 min-h-[400px]">
                             <Slideshow
+                                // control={() => setCurrentIndex((prev) => (prev + 1) % project.images.length)}
                                 images={project.images}
                                 currentIndex={currentIndex}
                                 nextImage={() => setCurrentIndex((prev) => (prev + 1) % project.images.length)}
                                 prevImage={() => setCurrentIndex((prev) => (prev - 1 + project.images.length) % project.images.length)}
-                            />
+                                 
+                           />
                         </div>
                     </div>
                     <div className="p-10 space-y-8 overflow-y-auto max-h-[90vh]">
