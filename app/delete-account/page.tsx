@@ -5,7 +5,7 @@ export default function DeleteAccount() {
         <h1 className="text-3xl font-bold text-slate-900 mb-6">
           MiVocabulario - Hesap ve Veri Silme
         </h1>
-        
+
         <div className="prose prose-slate max-w-none space-y-6 text-slate-700">
           <p>
             MiVocabulario olarak gizliliğinize önem veriyoruz. Hesabınızı ve hesabınızla ilişkili tüm verileri silmek isterseniz aşağıdaki yöntemleri kullanabilirsiniz.
@@ -19,21 +19,23 @@ export default function DeleteAccount() {
 
           <section className="space-y-4">
             <h2 className="text-xl font-semibold text-slate-900">Hesabımı Nasıl Silerim?</h2>
-            
+
             <div className="space-y-4">
               <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
                 <h3 className="font-bold mb-1">1. Uygulama İçinden (Hızlı)</h3>
-                <p>Uygulama içindeki <strong>Ayarlar</strong> sekmesine giderek <strong>"Hesabı Sil"</strong> butonuna dokunabilirsiniz. Verileriniz anında silinecektir.</p>
+                <p>
+                  {`Uygulama içindeki Ayarlar sekmesine giderek "Hesabı Sil" butonuna dokunabilirsiniz.`}
+                </p>
               </div>
 
               <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
                 <h3 className="font-bold mb-1">2. E-posta Yoluyla</h3>
                 <p>
-                  Uygulamaya erişemiyorsanız, kayıtlı e-posta adresinizden 
+                  Uygulamaya erişemiyorsanız, kayıtlı e-posta adresinizden
                   <a href="mailto:ediksimay@gmail.com" className="text-blue-600 hover:underline ml-1">
                     ediksimay@gmail.com
-                  </a> 
-                   adresine "Hesap Silme Talebi" konulu bir mail atarak verilerinizin kaldırılmasını talep edebilirsiniz.
+                  </a>
+                  adresine "Hesap Silme Talebi" konulu bir mail atarak verilerinizin kaldırılmasını talep edebilirsiniz.
                 </p>
               </div>
             </div>
